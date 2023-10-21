@@ -8,10 +8,10 @@ extern _MessageBoxA@16 : PROC
 public _main
 
 .data
-    tekst_pocz db 10, 'Proszê napisaæ jakiœ tekst '
+    tekst_pocz db 10, 'ProszÄ™ napisaÄ‡ jakiÅ› tekst '
     db 'i nacisnac Enter', 10
-    koniec_t db ? ; ? -> nieokreœlona wartoœæ
-    magazyn db 80 dup (?) ;inicjalizacja tablicy o d³ugoœci 80 bajtów, o niekreœlonej zawartoœci
+    koniec_t db ? ; ? -> nieokreÅ›lona wartoÅ›Ä‡
+    magazyn db 80 dup (?) ;inicjalizacja tablicy o dÅ‚ugoÅ›ci 80 bajtÃ³w, o niekreÅ›lonej zawartoÅ›ci
     nowa_linia db 10
     liczba_znakow dd ?
 
@@ -36,7 +36,7 @@ _main PROC
 
 ptl:
     mov dl, magazyn[ebx]
-    ; Zamiana ma³ych liter na wielkie litery
+    ; Zamiana maÅ‚ych liter na wielkie litery
     cmp dl, 'a'
     jb polskie_litery
     cmp dl, 'z'
@@ -45,7 +45,7 @@ ptl:
     jmp dalej
 
 polskie_litery:
-    ; Zamiana liter specyficznych dla jêzyka polskiego
+    ; Zamiana liter specyficznych dla jÄ™zyka polskiego
     cmp dl, 165
     je zamien_a
 
@@ -115,7 +115,7 @@ dalej:
     inc ebx
      
     dec ecx
-    jnz ptl ;wroc do pêtli + przed³uzenie pêtli
+    jnz ptl ;wroc do pÄ™tli + przedÅ‚uzenie pÄ™tli
 
     push liczba_znakow
     push OFFSET magazyn
